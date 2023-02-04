@@ -1,8 +1,8 @@
 ﻿namespace Day10_d08_Ftask
 {
-    enum MultipleChoice
+    enum MC
     {
-        A,B, C, D
+        A=0,a=0,B=1,b=1, C=2,c=2, D=3,d=3
     }
     internal class Exam
     {
@@ -32,7 +32,7 @@
                     Console.WriteLine($"->{item.Header}");
                     Console.WriteLine($"{item.Body}");
                     egapto = Console.ReadLine();
-                } while (egapto != "A" && egapto != "B");
+                } while (egapto != "A" && egapto != "a" && egapto != "B" && egapto != "b");
                 if (egapto.ToLower() == item.AnswerTF.Answers.ToLower())
                 {
                     marks += item.Marks;
@@ -48,7 +48,7 @@
                     Console.WriteLine($"->{item.Header}");
                     Console.WriteLine($"{item.Body}");
                     egapto = Console.ReadLine();
-                } while (!Enum.IsDefined(typeof(MultipleChoice), egapto));
+                } while (!Enum.IsDefined(typeof(MC), egapto));
                 //egapto != "a" && egapto != "b" && egapto != "c" && egapto != "d");
                 if (egapto.ToLower() == item.AnswerChOne.Answers.ToLower())
                 {
@@ -56,18 +56,20 @@
                 }
             }
 
-            bool CheckMC(string eg)
+            bool CheckMC(string str)
             {
-                string[] arreg = eg.Split("-");
-                for (int i = 0; i < arreg.Length; i++)
+                string[] Strarr = str.Split("-");
+                MC[] MCarr = new MC[Strarr.Length];
+                for(int i = 0; i < Strarr.Length; i++) { MCarr[i] = (MC)Enum.Parse(typeof(MC), Strarr[i]);}
+
+                for (int i = 0; i < MCarr.Length; i++)
                 {
-                    for (int j = i + 1; j < arreg.Length; j++) { if (arreg[i] == arreg[j]) return true; }
+                    for (int j = i + 1; j < MCarr.Length; j++) { if (MCarr[i] == MCarr[j]) return true; }
                 }
-                if (!(arreg.Length > 1)) return true;       
-                foreach (var i in arreg)
-                {
-                    if (!Enum.IsDefined(typeof(MultipleChoice), i)) return true;
-                }
+                if (!(Strarr.Length > 1)) return true; 
+                
+                foreach (var i in Strarr) { if (!Enum.IsDefined(typeof(MC), i)) return true; }
+
                 return false;
             }
 
