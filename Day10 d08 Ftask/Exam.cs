@@ -32,7 +32,7 @@
                     Console.WriteLine($"->{item.Header}");
                     Console.WriteLine($"{item.Body}");
                     egapto = Console.ReadLine();
-                } while (egapto != "a" && egapto != "b");
+                } while (egapto != "A" && egapto != "B");
                 if (egapto.ToLower() == item.AnswerTF.Answers.ToLower())
                 {
                     marks += item.Marks;
@@ -81,15 +81,14 @@
                     egapto = Console.ReadLine();
 
                 } while (CheckMC(egapto));
-                //} while /*((MultipleChoice) enum.parse (typeof(MultipleChoice),egapto)  != MultipleChoice);*/ (egapto != "a");
                 if (egapto.ToLower() == item.AnswerChmul.Answers.ToLower())
                 {
                     marks += item.Marks;
                 }
             }
-            Console.WriteLine($"-------------------------\n" +
-                $"||your result is {marks} out of 65||" +
-                $"\n-------------------------");
+            Console.WriteLine($"=====================================\n" +
+                $"===||Your Result is {marks} out of 65||===" +
+                $"\n=====================================");
         }
     }
     class FinalExam :Exam
@@ -116,10 +115,13 @@
         public override void TakeExam()
         {
              base.TakeExam();
-            Console.WriteLine("The Model Answer \n " +
-                "Q1 True Or false  \n answers are:-\n 1-True \n2-False \n3-False \n4-True \n5-False \n" +
-                "Q2 Choose the right answer \n 1- 2 2-Earth 3-Writing 4-orange 5- 6 \n" +
-                "Q3 Choose more than one answer \n 1- apples-bananas-meat \n2-zoo-cage-forest \n3- Dog - Panda - Cat \n");
+            Console.WriteLine("\nThe Model Answer \n \nanswers are:-\n" +
+                "-----------------------------\n"+
+                "Q1) True Or false: \n1-True \n2-False \n3-False \n4-True \n5-False \n" +
+                "-----------------------------\n"+
+                "Q2) Choose the right answer: \n1- 2 \n2-Earth \n3-Writing \n4-orange \n5- 6 \n" +
+                "-----------------------------\n"+
+                "Q3) Choose more than one answer: \n1- apples-bananas-meat \n2-zoo-cage-forest \n3- Dog - Panda - Cat \n");
         }
     }
 }

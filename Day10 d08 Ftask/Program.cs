@@ -24,19 +24,21 @@ List<QTrueFalse> qLTrueFalses = new List<QTrueFalse>()
     new QTrueFalse($"{Q1h}4- Flowers are plants",$"{Q1b}\"",5,new AnswerTrueFalse("A")),
     new QTrueFalse($"{Q1h}5- I love Egypt ",$"{Q1b}\"",5,new AnswerTrueFalse ("B"))
  };
+string Q2 = "Q2 Choose A B C or D";
 List<QChooseOne> qLChooseOnes = new List<QChooseOne>()
 {
-    new QChooseOne("Q2 Choose A B C or D","We have (A) 2 - B) 4 -c) 8 -D) 6) legs",5,   new AnswerChooseOne ("A")),
-    new QChooseOne("Q2 Choose A B C or D","Humans live on (A) Moon-B) Earth-c) Sky-D) drugs) ",5,  new AnswerChooseOne ("B")),
-    new QChooseOne("Q2 Choose A B C or D","pens are for (A) reading-B) singing-C) writing-D) dancing",5,new AnswerChooseOne ("C")),
-    new QChooseOne("Q2 Choose A B C or D","the sun color is (A)green - B)orange - C)black - D)f7lo2i) ",5 ,new AnswerChooseOne ("B")),
-    new QChooseOne("Q2 Choose A B C or Dr","2+4 = (A)8 - B)12 - c)3 - D)6) ",5 ,new AnswerChooseOne ("D"))
+    new QChooseOne($"{Q2}","We have (A) 2 - B) 4 -c) 8 -D) 6) legs",5,   new AnswerChooseOne ("A")),
+    new QChooseOne($"{Q2}","Humans live on (A) Moon-B) Earth-c) Sky-D) drugs) ",5,  new AnswerChooseOne ("B")),
+    new QChooseOne($"{Q2}","pens are for (A) reading-B) singing-C) writing-D) dancing",5,new AnswerChooseOne ("C")),
+    new QChooseOne($"{Q2}","the sun color is (A)green - B)orange - C)black - D)f7lo2i) ",5 ,new AnswerChooseOne ("B")),
+    new QChooseOne($"{Q2}","2+4 = (A)8 - B)12 - c)3 - D)6) ",5 ,new AnswerChooseOne ("D"))
 };
+string Q3 = "Q3 Choose A-B or A-B-C or A-B-D or A-C..etc";
 List<QChooseMul> qLChooseMuls = new List<QChooseMul>()
 {
-    new QChooseMul("Q3 Choose A-B or A-B-C or A-B-D or A-C or A-C-D or A-D or A-D-A..etc","we can eat (A) apples B) bananas C) ourselves D) meat)",5, new AnswerChooseMul ("A-B-D")),
-    new QChooseMul("Q3 Choose A-B or A-B-C or A-B-D or A-C or A-C-D or A-D or A-D-A..etc","Where do the lions live (A) zoo - B) cage - C) Sky - D) forest) ",5, new AnswerChooseMul ("A-B-D")),
-    new QChooseMul("Q3 Choose A-B or A-B-C or A-B-D or A-C or A-C-D or A-D or A-D-A..etc","choose 3 Animals (A) Dog - B) someone you know - C) Panda - D) Cat) ",5,new AnswerChooseMul ("A-C-D")),
+    new QChooseMul($"{Q3}","we can eat (A) apples B) bananas C) ourselves D) meat)",5, new AnswerChooseMul ("A-B-D")),
+    new QChooseMul($"{Q3}","Where do the lions live (A) zoo - B) cage - C) Sky - D) forest) ",5, new AnswerChooseMul ("A-B-D")),
+    new QChooseMul($"{Q3}","choose 3 Animals (A) Dog - B) someone you know - C) Panda - D) Cat) ",5,new AnswerChooseMul ("A-C-D")),
     
 };
 
