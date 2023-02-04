@@ -24,6 +24,7 @@ List<QTrueFalse> qLTrueFalses = new List<QTrueFalse>()
     new QTrueFalse($"{Q1h}4- Flowers are plants",$"{Q1b}\"",5,new AnswerTrueFalse("A")),
     new QTrueFalse($"{Q1h}5- I love Egypt ",$"{Q1b}\"",5,new AnswerTrueFalse ("B"))
 };
+string Q2h;
 List<QChooseOne> qLChooseOnes = new List<QChooseOne>()
 {
     new QChooseOne("Q2 Choose A B C or D","We have (A) 2 - B) 4 -c) 8 -D) 6) legs",5,   new AnswerChooseOne ("A")),
