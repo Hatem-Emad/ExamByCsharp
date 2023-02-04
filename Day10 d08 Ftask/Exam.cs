@@ -2,7 +2,7 @@
 {
     enum MultipleChoice
     {
-        A, B, C, D
+        A,B, C, D
     }
     internal class Exam
     {
@@ -59,6 +59,10 @@
             bool CheckMC(string eg)
             {
                 string[] arreg = eg.Split("-");
+                for (int i = 0; i < arreg.Length; i++)
+                {
+                    for (int j = i + 1; j < arreg.Length; j++) { if (arreg[i] == arreg[j]) return true; }
+                }
                 if (!(arreg.Length > 1)) return true;       
                 foreach (var i in arreg)
                 {
