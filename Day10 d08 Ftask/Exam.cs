@@ -59,16 +59,18 @@
             bool CheckMC(string str)
             {
                 string[] Strarr = str.Split("-");
-                MC[] MCarr = new MC[Strarr.Length];
-                for(int i = 0; i < Strarr.Length; i++) { MCarr[i] = (MC)Enum.Parse(typeof(MC), Strarr[i]);}
-
-                for (int i = 0; i < MCarr.Length; i++)
+                
+                if (!(Strarr.Length > 1)) return true;      //Enter at leaset 2 choices
+                
+                foreach (var i in Strarr) { if (!Enum.IsDefined(typeof(MC), i)) return true; }      //Every choice must be enum
+                
+                MC[] MCarr = new MC[Strarr.Length];         //Cant choose 2 similars i.e: A-a or A-A (not valid)
+                for (int i = 0; i < Strarr.Length; i++) { MCarr[i] = (MC)Enum.Parse(typeof(MC), Strarr[i]);}
+                for (int i = 0; i < MCarr.Length; i++)      
                 {
                     for (int j = i + 1; j < MCarr.Length; j++) { if (MCarr[i] == MCarr[j]) return true; }
                 }
-                if (!(Strarr.Length > 1)) return true; 
                 
-                foreach (var i in Strarr) { if (!Enum.IsDefined(typeof(MC), i)) return true; }
 
                 return false;
             }
